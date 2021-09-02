@@ -1,5 +1,8 @@
 import Head from "next/head";
 
+import TopHeader from "../components/TopHeader";
+import Navigation from "../components/Navigation";
+
 export default function Home() {
   return (
     <div>
@@ -9,9 +12,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <h1>Pieczara bitewna</h1>
-      </div>
+      <TopHeader />
+      <Navigation />
+
+      {/* todo component */}
+      {/* <div>
+        <video
+          // poster="/main_poster_vid.webp"
+          //  autoPlay
+          muted
+          loop
+        >
+          <source src="/main_vid.mp4" />
+        </video>
+      </div> */}
     </div>
   );
 }
