@@ -8,13 +8,11 @@ function Navigation() {
   const [manuScrolled, setMenuScrolled] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY >= 60) {
+    if (window.scrollY >= 80) {
       setMenuScrolled(true);
-      console.log(manuScrolled);
     }
-    if (window.scrollY <= 50) {
+    if (window.scrollY <= 70) {
       setMenuScrolled(false);
-      console.log(manuScrolled);
     }
   };
   useEffect(() => {
@@ -24,8 +22,9 @@ function Navigation() {
 
   return (
     <Root scrolled={manuScrolled ? "scrolled" : ""}>
-      <NavbarContainer></NavbarContainer>
-      <Test color="red"></Test>
+      <NavbarContainer
+        scrolled={manuScrolled ? "scrolled" : ""}
+      ></NavbarContainer>
     </Root>
   );
 }
@@ -38,15 +37,21 @@ const Root = styled.div(({ scrolled }) => ({
   top: scrolled ? "0" : "100px",
   left: "0",
   width: "100%",
-  height: "73px",
+  height: scrolled ? "45px" : "75px",
+  transition: "all 0.25s ease-out 0s",
 }));
-const NavbarContainer = styled.div`
-  display: flex;
-  margin: auto;
-  background-color: black;
-  height: 73px;
-  width: 80%;
-`;
-const Test = styled.div(({ color }) => ({
-  color: color,
+
+const NavbarContainer = styled.div(({ scrolled }) => ({
+  display: "flex",
+  margin: "auto",
+  backgroundImage: `url("./assets/texture8.webp")`,
+  backgroundSize: scrolled ? "70px 50px" : "90px 75px",
+  backgroundPosition: "top",
+  backgroundRepeat: "repeat-x",
+  height: scrolled ? "45px" : "75px",
+  width: scrolled ? "100%" : "80%",
+  transition: "all 0.5s ease-out 0.5s",
+  borderRadius: "2px",
+  boxShadow:
+    "rgba(111, 111, 111, 0.16) 0px 3px 6px,rgba(111, 111, 111, 0.23) 0px 3px 6px",
 }));
