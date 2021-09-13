@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NavigationItems from "./navigation-items";
 
+import links from "./links";
 import { sizes } from "../../styles/breakpoints";
 import styled from "styled-components";
 
@@ -21,35 +22,13 @@ function Navigation() {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-  const DUMMY_LINKS = [
-    {
-      id: 1,
-      url: "/1",
-      title: "title1",
-    },
-    {
-      id: 2,
-      url: "/2",
-      title: "title2",
-    },
-    {
-      id: 3,
-      url: "/3",
-      title: "title3",
-    },
-    {
-      id: 4,
-      url: "/4",
-      title: "title4",
-    },
-  ];
 
   return (
     <Root scrolled={manuScrolled ? "scrolled" : ""}>
       <NavContainer>
         <NavbarContainer scrolled={manuScrolled ? "scrolled" : ""}>
           <ItemContainer scrolled={manuScrolled ? "scrolled" : ""}>
-            {DUMMY_LINKS.map(({ id, url, title }) => (
+            {links.map(({ id, url, title }) => (
               <NavigationItems key={id} url={url} title={title} />
             ))}
           </ItemContainer>
