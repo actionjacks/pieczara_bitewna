@@ -9,10 +9,10 @@ function Navigation() {
   const [manuScrolled, setMenuScrolled] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 120) {
       setMenuScrolled(true);
     }
-    if (window.scrollY <= 70) {
+    if (window.scrollY <= 100) {
       setMenuScrolled(false);
     }
   };
@@ -40,23 +40,21 @@ function Navigation() {
 
 export default Navigation;
 
-const Root = styled.div(({ scrolled }) => ({
-  zIndex: "90",
-  position: "fixed",
-  top: scrolled ? "0" : "100px",
-  left: "0",
-  width: "100%",
-  transition: "all 0.35s ease-out 0.1s",
-}));
-const NavContainer = styled.div`
-  position: relative;
+const Root = styled.div`
+  z-index: 90;
+  margin-top: 100px;
   width: 100%;
-  height: 100%;
   transition: all 0.35s ease-out 0.1s;
+  position: sticky;
+  top: 0;
 
   @media ${sizes.sm} {
     display: none;
   }
+`;
+const NavContainer = styled.div`
+  z-index: 90;
+  transition: all 0.35s ease-out 0.1s;
 `;
 const NavbarContainer = styled.div(({ scrolled }) => ({
   display: "flex",
