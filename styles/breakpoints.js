@@ -7,9 +7,10 @@ const size = {
 };
 
 export const sizes = {
-  xl: `(min-width: ${size.xl})`,
-  lg: `(min-width: ${size.lg})`,
-  md: `(min-width: ${size.md})`,
-  sm: `(min-width: ${size.sm})`,
-  xs: `(min-width: ${size.xs})`,
+  xl: `(max-width: ${size.xl})`,
+  lg: `(max-width: ${size.lg})`,
+  md: `(max-width: ${size.md})`,
+  sm: `(max-width: ${size.sm})`,
+  xs: `(max-width: ${size.xs})`,
 };
+export const objSizes = [];
