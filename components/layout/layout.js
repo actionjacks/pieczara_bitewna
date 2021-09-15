@@ -7,7 +7,7 @@ function Layout({ children }) {
     <>
       <TopHeader />
       <Navigation />
-      {/* <MobileNavigation /> */}
+      <MobileNavigation />
       <main>{children}</main>
     </>
   );

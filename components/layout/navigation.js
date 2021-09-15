@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NavigationItems from "./navigation-items";
+import NavigationItem from "./navigation-items";
 
 import links from "./links";
 import { sizes } from "../../styles/breakpoints";
@@ -29,7 +29,7 @@ function Navigation() {
         <NavbarContainer scrolled={manuScrolled ? "scrolled" : ""}>
           <ItemContainer scrolled={manuScrolled ? "scrolled" : ""}>
             {links.map(({ id, url, title }) => (
-              <NavigationItems key={id} url={url} title={title} />
+              <NavigationItem key={id} url={url} title={title} />
             ))}
           </ItemContainer>
         </NavbarContainer>
@@ -66,6 +66,9 @@ const NavbarContainer = styled.div(({ scrolled }) => ({
   width: scrolled ? "100%" : "90%",
   margin: "auto",
   transition: "all 0.35s ease-out 0.1s",
+
+  boxShadow:
+    "inset rgba(111, 111, 111, 0.16) 0px 3px 6px, rgba(111, 111, 111, 0.23) 0px 3px 6px",
 }));
 const ItemContainer = styled.ul(({ scrolled }) => ({
   display: "flex",

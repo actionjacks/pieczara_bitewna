@@ -4,7 +4,7 @@ import { sizes } from "../../styles/breakpoints";
 import colors from "../../styles/colors";
 import styled from "styled-components";
 
-function NavigationItems({ url, title }) {
+function NavigationItem({ url, title }) {
   return (
     <LinkContainer>
       <Link href={url}>
@@ -14,7 +14,7 @@ function NavigationItems({ url, title }) {
   );
 }
 
-export default NavigationItems;
+export default NavigationItem;
 
 const LinkContainer = styled.li`
   display: flex;
@@ -24,6 +24,10 @@ const LinkContainer = styled.li`
   align-items: center;
   text-align: center;
   list-style: none;
+
+  @media ${sizes.sm} {
+    margin-bottom: 10px;
+  }
 `;
 const Item = styled.a`
   cursor: pointer;
@@ -37,5 +41,9 @@ const Item = styled.a`
   &:hover {
     color: ${colors.mainDarkColor};
     background-color: ${colors.mainFontColor};
+  }
+
+  @media ${sizes.sm} {
+    font-size: 26px;
   }
 `;
