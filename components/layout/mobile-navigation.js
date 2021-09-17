@@ -34,6 +34,7 @@ function MobileNavigation() {
 export default MobileNavigation;
 
 const Root = styled.div`
+  z-index: 99;
   overflow: "hidden";
   width: 100%;
   display: none;

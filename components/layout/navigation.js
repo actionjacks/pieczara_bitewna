@@ -58,7 +58,7 @@ const NavContainer = styled.div`
 `;
 const NavbarContainer = styled.div(({ scrolled }) => ({
   display: "flex",
-  backgroundImage: `url("./assets/texture10.webp")`,
+  //backgroundImage: `url("./assets/texture10.webp")`,
   backgroundSize: "600px 75px",
   backgroundPosition: "top",
   backgroundRepeat: "repeat-x",
