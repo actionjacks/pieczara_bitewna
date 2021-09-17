@@ -40,6 +40,9 @@ export default function Home() {
   );
 }
 const Root = styled.div`
+  box-shadow: rgba(111, 111, 111, 0.16) 0px 3px 6px,
+    rgba(111, 111, 111, 0.23) 0px 3px 6px;
+
   video {
     padding-top: 55px;
     position: absolute;
@@ -50,6 +53,8 @@ const Root = styled.div`
     min-height: 100%;
     z-index: -1;
     width: 100%;
+    box-shadow: rgba(111, 111, 111, 0.16) 0px 3px 6px,
+      rgba(111, 111, 111, 0.23) 0px 3px 6px;
   }
 `;
 const PlayPauseBtn = styled.div`
