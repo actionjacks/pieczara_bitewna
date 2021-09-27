@@ -21,4 +21,5 @@ const Root = styled.header`
   box-shadow: rgba(111, 111, 111, 0.16) 0px 3px 6px,
     rgba(111, 111, 111, 0.23) 0px 3px 6px;
 `;
+
 const HeaderTopContainer = styled.div``;

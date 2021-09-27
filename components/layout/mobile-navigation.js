@@ -44,13 +44,16 @@ const Root = styled.div`
     display: block;
   }
 `;
+
 const BurgerMenu = styled.div`
   font-size: 3rem;
   cursor: pointer;
   & svg {
     position: fixed;
+    color: #fcd144;
   }
 `;
+
 const NavContainer = styled.div(({ menuOpen }) => ({
   zIndex: "99",
   backgroundColor: "white",

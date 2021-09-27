@@ -52,13 +52,14 @@ const Root = styled.div`
     display: none;
   }
 `;
+
 const NavContainer = styled.div`
   z-index: 90;
   transition: all 0.35s ease-out 0.1s;
 `;
+
 const NavbarContainer = styled.div(({ scrolled }) => ({
   display: "flex",
-  //backgroundImage: `url("./assets/texture10.webp")`,
   backgroundSize: "600px 75px",
   backgroundPosition: "top",
   backgroundRepeat: "repeat-x",
@@ -66,10 +67,10 @@ const NavbarContainer = styled.div(({ scrolled }) => ({
   width: scrolled ? "100%" : "90%",
   margin: "auto",
   transition: "all 0.35s ease-out 0.1s",
-
   boxShadow:
     "inset rgba(111, 111, 111, 0.16) 0px 3px 6px, rgba(111, 111, 111, 0.23) 0px 3px 6px",
 }));
+
 const ItemContainer = styled.ul(({ scrolled }) => ({
   display: "flex",
   width: "80%",

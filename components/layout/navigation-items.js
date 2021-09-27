@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 function NavigationItem({ url, title }) {
   return (
-    <LinkContainer>
+    <LinkContainer data-aos="fade-left">
       <Link href={url}>
         <Item>{title}</Item>
       </Link>
@@ -29,6 +29,7 @@ const LinkContainer = styled.li`
     margin-bottom: 10px;
   }
 `;
+
 const Item = styled.a`
   cursor: pointer;
   color: ${colors.mainFontColor};

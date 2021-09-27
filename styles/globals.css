@@ -1,8 +1,13 @@
+@font-face {
+  font-family: "Minion-pro";
+  src: url("/assets/Minion_Pro_Regular.ttf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Minion-pro";
 }
 #__next {
   height: 300vh;
