@@ -35,41 +35,46 @@ export default MobileNavigation;
 
 const Root = styled.div`
   z-index: 99;
-  overflow: "hidden";
   width: 100%;
   display: none;
   padding: 1rem;
 
   @media ${sizes.sm} {
     display: block;
+    z-index: 99;
   }
 `;
 
 const BurgerMenu = styled.div`
   font-size: 3rem;
-  cursor: pointer;
+
   & svg {
+    z-index: 98;
     position: fixed;
     color: #fcd144;
   }
 `;
 
 const NavContainer = styled.div(({ menuOpen }) => ({
-  zIndex: "99",
-  backgroundColor: "white",
-  backgroundImage: `url("./assets/mobile-nav-bg.png")`,
-  backgroundPosition: "top",
-  position: "fixed",
-  fontSize: "3.5rem",
-  marginTop: "40px",
-  height: "75%",
-  width: "100%",
-  top: "0",
-  left: !menuOpen ? "-100%" : "0",
-  transition: "all 0.3s ease-out 0.2s",
+  "&": {
+    zIndex: "99",
+    position: "fixed",
+    backgroundColor: "black",
+    fontSize: "3.5rem",
+    height: "100%",
+    width: "100%",
+    top: "0",
+    left: !menuOpen ? "-100%" : "0",
+    transition: "all 0.3s ease-out 0.2s",
+    backgroundImage: `url("./assets/mobile-nav-bg-2.png")`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  },
 
   "& svg": {
     cursor: "pointer",
+    margin: "2.5rem",
+    color: "#fcd144",
   },
 
   "@media (orientation: landscape)": {
@@ -79,6 +84,6 @@ const NavContainer = styled.div(({ menuOpen }) => ({
 const NavItems = styled.ul`
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 20%;
   padding: 1rem;
 `;
