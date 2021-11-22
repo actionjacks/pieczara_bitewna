@@ -4,9 +4,13 @@ import { sizes } from "../../styles/breakpoints";
 import colors from "../../styles/colors";
 import styled from "styled-components";
 
-function NavigationItem({ url, title }) {
+function NavigationItem({ url, title, handleMenuOpen }) {
+  const disableBurger = () => {
+    handleMenuOpen();
+  };
+
   return (
-    <LinkContainer data-aos="fade-left">
+    <LinkContainer onClick={disableBurger}>
       <Link href={url}>
         <Item>{title}</Item>
       </Link>
@@ -18,7 +22,6 @@ export default NavigationItem;
 
 const LinkContainer = styled.li`
   display: flex;
-  height: 100%;
   margin-left: 15px;
   justify-content: center;
   align-items: center;
@@ -29,7 +32,6 @@ const LinkContainer = styled.li`
     margin-bottom: 10px;
   }
 `;
-
 const Item = styled.a`
   cursor: pointer;
   color: ${colors.mainFontColor};

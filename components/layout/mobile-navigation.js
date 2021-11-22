@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import NavigationItem from "./navigation-items";
 
-import { TiThMenuOutline, TiTimesOutline } from "react-icons/ti";
+import { TiThMenuOutline, TiTimesOutline, TiArrowLeft } from "react-icons/ti";
 import links from "./links";
 import { sizes } from "../../styles/breakpoints";
 import styled from "styled-components";
 
 function MobileNavigation() {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuOpen = () => {
@@ -23,9 +25,20 @@ function MobileNavigation() {
         <TiTimesOutline onClick={handleMenuOpen} />
         <NavItems>
           {links.map(({ id, url, title }) => (
-            <NavigationItem key={id} url={url} title={title} />
+            <NavigationItem
+              handleMenuOpen={handleMenuOpen}
+              key={id}
+              url={url}
+              title={title}
+            />
           ))}
         </NavItems>
+        <TiArrowLeft
+          onClick={() => {
+            router.push("/");
+            handleMenuOpen();
+          }}
+        />
       </NavContainer>
     </Root>
   );
@@ -63,21 +76,28 @@ const NavContainer = styled.div(({ menuOpen }) => ({
     zIndex: "99",
     position: "fixed",
     backgroundColor: "black",
-    fontSize: "3.5rem",
+    fontSize: "1em",
     height: "100%",
-    width: "100%",
+    width: "40%",
     top: "0",
     left: !menuOpen ? "-100%" : "0",
     transition: "all 0.3s ease-out 0.2s",
-    backgroundImage: `url("./assets/mobile-nav-bg-2.png")`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
+    boxShadow: "inset -19px -3px 9px -18px rgba(217, 217, 231, 1)",
   },
 
   "& svg": {
     cursor: "pointer",
-    margin: "2.5rem",
+    width: "50%",
+    padding: "0",
+    marginTop: "1em",
+    fontSize: "3em",
     color: "#fcd144",
+
+    "@media (orientation: landscape)": {
+      marginTop: "0",
+    },
   },
 
   "@media (orientation: landscape)": {
@@ -89,4 +109,8 @@ const NavItems = styled.ul`
   flex-direction: column;
   margin: 20%;
   padding: 1rem;
+
+  @media (orientation: landscape) {
+    padding: 0;
+  }
 `;
