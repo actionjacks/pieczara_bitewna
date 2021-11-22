@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
-import Main from "../components/main";
+import MainTop from "../components/mainTop";
+import MainBottom from "../components/mainBottom";
 import logo from "../public/assets/pieczara-logo-xs.webp";
 
 import { TiMediaPlayOutline, TiMediaPauseOutline } from "react-icons/ti";
@@ -49,11 +50,13 @@ export default function Home() {
           )}
         </PlayPauseBtn>
 
-        <Main />
+        <MainTop />
+        <MainBottom />
       </MainContainer>
     </Root>
   );
 }
+
 const Root = styled.div`
   video {
     padding-top: 55px;
@@ -70,6 +73,7 @@ const Root = styled.div`
       rgba(111, 111, 111, 0.23) 0px 3px 6px;
   }
 `;
+
 const MainContainer = styled.main`
   z-index: 2;
   background-color: #0b0d12;
@@ -80,7 +84,6 @@ const MainContainer = styled.main`
 const LogoContainer = styled.div(({ show }) => ({
   zIndex: "2",
   opacity: !show ? "1" : "0",
-  width: "100%",
   padding: "0 1rem 2rem 1rem",
   textAlign: "center",
   transition: "1s",

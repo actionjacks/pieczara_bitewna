@@ -47,10 +47,13 @@ const Root = styled.div`
 
 const BurgerMenu = styled.div`
   font-size: 3rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
 
   & svg {
     z-index: 98;
     position: fixed;
+    cursor: pointer;
     color: #fcd144;
   }
 `;
